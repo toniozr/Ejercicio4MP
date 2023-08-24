@@ -53,3 +53,20 @@ bool Exercici::afegeixTramesa(const string& niu, const string& fitxer, const str
 }
 
 
+bool Exercici::consultaTramesa(const string& niu, const string& data, string& fitxer)
+{
+	int posicio = 0;
+	bool trobat = false;
+	while (!trobat && posicio < m_nEstudiants)
+	{
+		if (m_lliuraments[posicio].getNiu() == niu) { trobat = true; }
+		else { posicio++; }
+	}
+	if (trobat)
+	{
+		trobat = m_lliuraments[posicio].consultaTramesa(data, fitxer);
+	}
+	return trobat;
+}
+
+
