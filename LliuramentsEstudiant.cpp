@@ -33,6 +33,27 @@ bool LliuramentsEstudiant::eliminaTramesa(const string& data)
 
 }
 
+bool LliuramentsEstudiant::consultaTramesa(const string& data, string& fitxer)
+{
+	bool found = false;
+
+	forward_list<Tramesa>::iterator it = m_trameses.begin();
+
+	while(!found && it != m_trameses.end())
+	{
+		if(it->m_data == data)
+		{
+			fitxer = it->m_fitxer;
+			found = true;
+		}
+		else
+			it++;
+	}
+
+	return found;
+}
+
+
 
 
 
