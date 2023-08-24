@@ -70,3 +70,22 @@ bool Exercici::consultaTramesa(const string& niu, const string& data, string& fi
 }
 
 
+bool Exercici::eliminaTramesa(const string& niu, const string& data)
+{
+	bool trobatIeliminat = false;
+
+	for(int i = 0; i < m_nEstudiants; i++)
+	{
+		if(m_lliuraments[i].getNiu() == niu)
+		{
+			trobatIeliminat = m_lliuraments[i].eliminaTramesa(data);
+			break;
+		}
+	}
+
+	return trobatIeliminat;
+}
+
+
+
+
