@@ -14,6 +14,8 @@ public:
 	void afegeixTramesa(const string& fitxer, const string& data);
 	bool consultaTramesa(const string& data, string& fitxer);
 	bool eliminaTramesa(const string& data);
+	LliuramentsEstudiant& operator=(const LliuramentsEstudiant& obj);
+
 private:
 	string m_niu;
 	float m_nota;

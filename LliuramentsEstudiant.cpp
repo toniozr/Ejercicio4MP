@@ -53,6 +53,18 @@ bool LliuramentsEstudiant::consultaTramesa(const string& data, string& fitxer)
 	return found;
 }
 
+LliuramentsEstudiant& LliuramentsEstudiant::operator=(const LliuramentsEstudiant& obj)
+{
+	if(this != &obj)
+	{
+		this->m_niu = obj.m_niu;
+		this->m_nota = obj.m_nota;
+		this->m_trameses = obj.m_trameses;
+	}
+
+	return *this;
+}
+
 
 
 

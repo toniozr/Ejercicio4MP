@@ -86,6 +86,26 @@ bool Exercici::eliminaTramesa(const string& niu, const string& data)
 	return trobatIeliminat;
 }
 
+Exercici::Exercici(const Exercici& e)
+{
+
+	this->m_dataLimit = e.m_dataLimit;
+	this->m_descripcio = e.m_descripcio;
+	this->m_nEstudiants = e.m_nEstudiants;
+	if(e.m_lliuraments != nullptr)
+	{
+		this->m_lliuraments = new LliuramentsEstudiant[this->m_nEstudiants];
+		for(int i = 0; i < this->m_nEstudiants; i++)
+		{
+			this->m_lliuraments[i] = e.m_lliuraments[i];
+		}
+	}
+	else
+		this->m_lliuraments = nullptr;
+
+
+}
+
 
 
 
