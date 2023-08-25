@@ -113,5 +113,33 @@ Exercici::~Exercici()
 }
 
 
+Exercici& Exercici::operator=(const Exercici& e)
+{
+	if(this != &e )
+	{
+		this->m_dataLimit = e.m_lliuraments;
+		this->m_descripcio = e.m_descripcio;
+		this->m_nEstudiants = e.m_nEstudiants;
+
+		if(this->m_lliuraments != nullptr)
+		{
+			delete[] m_lliuraments;
+		}
+
+		if(e.m_lliuraments != nullptr)
+		{
+			this->m_lliuraments = new LliuramentsEstudiant[this->m_nEstudiants];
+			for(int i = 0; i < this->m_nEstudiants; i++)
+				this->m_lliuraments[i] = e.m_lliuraments[i];
+		}
+		else
+		{
+			this->m_lliuraments = nullptr;
+		}
+	}
+	return *this;
+}
+
+
 
 
