@@ -117,7 +117,7 @@ Exercici& Exercici::operator=(const Exercici& e)
 {
 	if(this != &e )
 	{
-		this->m_dataLimit = e.m_lliuraments;
+		this->m_dataLimit = e.m_dataLimit;
 		this->m_descripcio = e.m_descripcio;
 		this->m_nEstudiants = e.m_nEstudiants;
 

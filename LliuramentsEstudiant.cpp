@@ -17,7 +17,7 @@ bool LliuramentsEstudiant::eliminaTramesa(const string& data)
 
 	while(!found && it != m_trameses.end())
 	{
-		if(it->m_data == data)
+		if(it->getData() == data)
 		{
 			found = true;
 			m_trameses.erase_after(prev);
@@ -41,9 +41,9 @@ bool LliuramentsEstudiant::consultaTramesa(const string& data, string& fitxer)
 
 	while(!found && it != m_trameses.end())
 	{
-		if(it->m_data == data)
+		if(it->getData() == data)
 		{
-			fitxer = it->m_fitxer;
+			fitxer = it->getFitxer();
 			found = true;
 		}
 		else
