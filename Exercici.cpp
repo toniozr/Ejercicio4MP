@@ -106,6 +106,12 @@ Exercici::Exercici(const Exercici& e)
 
 }
 
+Exercici::~Exercici()
+{
+	if(this->m_lliuraments != nullptr)
+		delete[] m_lliuraments;
+}
+
 
 
 
